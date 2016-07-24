@@ -46,7 +46,7 @@ h2 {
     Navigation Menu
 *===================*/
 .nav {
-  background-color: #FFEE00;
+  background-color: #FFF;
   font: 16px Lucida Sans, Trebuchet MS, Tahoma, sans-serif;
   height: 40px;
   /*===================*
@@ -61,7 +61,7 @@ h2 {
 
 .nav li {
   margin: 0;
-  padding: 0 10px;
+  padding: 0 20px;
   display: inline;
 }
 /*==============*
