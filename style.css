@@ -64,16 +64,6 @@ h2 {
   padding: 0 20px;
   display: inline;
 }
-/*==============*
-    Magic Float
-    Center Code
-*===============*/
-.float_center{
-	float: right;
-	position: relative;
-	left: -50%;
-	text-align: left;
-}
 
 /*==============*
     Search Box 
@@ -237,3 +227,4 @@ h2 {
 .form-wrapper #submit2::-moz-focus-inner {
 	border: 0;
 }
+

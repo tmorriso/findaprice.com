@@ -5,42 +5,38 @@
 	<title>Reportaprice</title>
 	<!-- Style sheed link to ServiceFramework.css -->
 	<link rel="stylesheet" type="text/css" href="style.css">
+  
+	<!-- Temporary javascript link-->
 
-	<!-- Temporary javascript header-->
-	<script type="text/javascript" src="script.js"></script>
-	
-	
 </head>
+
 <body>
   
 <div class="nav">
 <!-- ++++++++++++++NAVIGATION MENU+++++++++++++ -->
- 	<nav>
-      <ul>
-        <li><a href="Report_a_price.html"><b>Report a Price</b></a></li>
-        <li><a href="#">Suggest a Service</a></li>
-        <li><a href="#">Register a Business</a></li>
-        
-      </ul>
-     </nav>
-</div>
+   	<nav>
+        <ul>
+          <li><a href="listForm.html"><b>Report a Price</b></a></li>
+          <li><a href="businessForm.html">Become a XYZ business</a></li>
+        </ul>
+       </nav>
+  </div>
 
-<!--<div class="main">-->
 <!-- ++++++++++++++SEARCH BAR+++++++++++++++++++ -->
-<form class="form-wrapper">
-    <input type="text" id="search" placeholder="Find a price..." required>
-    <input type="submit" value="go" id="submit">
-</form>
-
-<!--
-	<p>
-      Click <a href="About_us.html">here</a> to learn about the future of price comparing.
-    </p>
--->
-
-<!--</div>-->
+  <form class="form-wrapper">
+      <input type="text" id="search" placeholder="Find a price..." required>
+      <input type="submit" value="go" id="submit" >
+  </form>
 
 
+
+<script>
+function searchListings() {
+    var x = document.getElementById("search").value;   
+    
+}
+</script>
+   
 
 </body>
 </html>
