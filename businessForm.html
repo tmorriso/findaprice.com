@@ -8,10 +8,13 @@
 
 <p> Becoming an XYZ Business will allow you to add services directly!</p>
 <p> All you need is your business ID number or company url!</p>
-<input type="text" id="inBussinesID" placeholder="Enter your business ID number">
+<input type="text" id="inBusinessID" placeholder="Business ID number">
+<p> Or</p>
+<input type="text" id="inURL" placeholder="Paste URL Here">
 <p> If you don't have a business ID fill out the form below to apply to be a certified XYZ Business</p>
+<input type="text" id="inBusinessID" placeholder="Business ID number">
 <input type="text" id="inName" placeholder="Enter Name">
-<input type="text" id="inService" placeholder="Enter the service">
+<input type="text" id="inService" placeholder="Enter your first service">
 <input type="text" id="inPrice" placeholder="What price did you pay?">
 <input type="text" id="inRating" placeholder="Enter a Rating">
 <input type="text" id="inURL" placeholder="Paste URL Here">
@@ -20,7 +23,7 @@
 <button onclick="createBusiness()">Submit</button>
 
 <p>The business ID number is:</p>
-<p id="=ID"></p>
+<p id="businessID"></p>
 <p>The business name is:</p>
 <p id="name"></p>
 <p>The service is:</p>
@@ -33,9 +36,9 @@
 <p id="url"></p>
 
 <script>
-function createListing() {
+function createBusiness() {
     var u = document.getElementById("inBusinessID").value;
-    document.getElementById("ID").innerHTML = u;
+    document.getElementById("businessID").innerHTML = u;
     var v = document.getElementById("inName").value;
     document.getElementById("name").innerHTML = v;
     var w = document.getElementById("inService").value;

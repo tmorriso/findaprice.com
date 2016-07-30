@@ -25,15 +25,16 @@
 <!-- ++++++++++++++SEARCH BAR+++++++++++++++++++ -->
   <form class="form-wrapper">
       <input type="text" id="search" placeholder="Find a price..." required>
-      <input type="submit" value="go" id="submit" >
+      <button id="submit" onclick="searchListings()">GO</button>
   </form>
 
-
+<p>Searching for:</p>
+<p id="searchItem"></p>
 
 <script>
 function searchListings() {
     var x = document.getElementById("search").value;   
-    
+    document.getElementById("searchItem").innerHTML = x;
 }
 </script>
    
