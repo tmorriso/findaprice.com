@@ -9,7 +9,7 @@ Status:
 	The index.html, and price reporting pages are working. We are using python as the backend language to run query scripts on mySQL. The most important aspects to focus on include; the database architecture of the database containing price listings for every service, (ever) and a method design to input information into the database. To do's include; finishing the code to add users input to the database, checking user input to assure proper values are entered, searching the database, and displaying results. Order of priotrity:
 
 		1. Adding inputs to database (listForm.py)
-		2. Searching Database -Dad
+		2. Searching Database -Dad (Look into using external plugins google might have one)
 		3. Displaying search results
 		4. Securities (making sure inputs are allowed(No mySQL query hacks), python db config file?)
 		5. Front End Assembly -Hillary
