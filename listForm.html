@@ -1,51 +1,31 @@
 <!DOCTYPE html>
-<html>
-<body>
 
+<html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
+<body>
+<h1> Report a Price </h1>
 
-<input type="text" id="inCategory" placeholder="Enter a Category">
-<input type="text" id="inSubCategory" placeholder="Enter Sub-Category">
-<input type="text" id="inService" placeholder="Enter the service">
-<input type="text" id="inPrice" placeholder="What price did you pay?">
-<input type="text" id="inRating" placeholder="Enter a Rating">
-<input type="text" id="inURL" placeholder="Paste URL Here">
- 
 
-<button onclick="createListing()">Submit</button>
+<form method="post" action="/cgi-bin/listForm.py" class="form-wrapper">
+<p>Category:    <input type="text" name="category"/></p>
+<p>Subcategory: <input type="text" name="subcategory"/></p>
+<p>Service:     <input type="text" name="service"/></p>
+<p>Company:     <input type="text" name="company"/></p>
+<p>Price:       <input type="text" name="price"/></p>
+<p>Rating:      <input type="text" name="rating"/></p>
+<p>URL: <input type="text" name="URL"/></p>
+<p>Location: <input type="text" name="location"/></p>
+<p>Attribute 1: <input type="text" name="atb_1"/></p>
+<p>Attribute 2: <input type="text" name="atb_2"/></p>
+<p>Attribute 3: <input type="text" name="atb_3"/></p>
+<p>Attribute 4: <input type="text" name="atb_4"/></p>
+<input type="submit" value="Submit" />
+</form>
 
-<p>The category is:</p>
-<p id="category"></p>
-<p>The sub category is:</p>
-<p id="subCategory"></p>
-<p>The service is:</p>
-<p id="service"></p>
-<p>The price paid is:</p>
-<p id="price"></p>
-<p>The rating is:</p>
-<p id="rating"></p>
-<p>The url is:</p>
-<p id="url"></p>
-
-<script>
-function createListing() {
-    var u = document.getElementById("inCategory").value;
-    document.getElementById("category").innerHTML = u;
-    var v = document.getElementById("inSubCategory").value;
-    document.getElementById("subCategory").innerHTML = v;
-    var w = document.getElementById("inService").value;
-    document.getElementById("service").innerHTML = w;
-    var x = document.getElementById("inPrice").value;
-    document.getElementById("price").innerHTML = x;
-    var y = document.getElementById("inRating").value;
-    document.getElementById("rating").innerHTML = y;
-    var z = document.getElementById("inURL").value;
-    document.getElementById("url").innerHTML = z;
-}
-</script>
 
 </body>
 </html>
+

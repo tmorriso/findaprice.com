@@ -6,23 +6,29 @@
 	<title>Reportaprice</title>
 	<!-- Style sheed link to ServiceFramework.css -->
 	<link rel="stylesheet" type="text/css" href="style.css">
+  
+	<!-- Temporary javascript link-->
+  
 
 </head>
 
 <body>
   
-
+<div class="nav">
 <!-- ++++++++++++++NAVIGATION MENU+++++++++++++ -->
-
-<a href="listForm.html">Report a Price</a>
-<a href="businessForm.html">Become a XYZ business</a>
-
+   	<nav>
+        <ul>
+          <li><a href="listForm.html"><b>Report a Price</b></a></li>
+          <li><a href="businessForm.html">Become a XYZ business</a></li>
+        </ul>
+       </nav>
+  </div>
 
 <!-- ++++++++++++++SEARCH BAR+++++++++++++++++++ -->
-<form class="form-wrapper">
-<input type="text" id="search" placeholder="Find a price..." required>
-<button id="submit" onclick="searchListings()">GO</button>
-</form>
+  <form class="form-wrapper">
+      <input type="text" id="search" placeholder="Find a price..." required>
+      <button id="submit" onclick="searchListings()">GO</button>
+  </form>
 
 <p>Searching for:</p>
 <p id="searchItem"></p>
