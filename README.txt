@@ -6,7 +6,7 @@ Full Stack Developer: Tom Morrison
 Tester: Ann Morrison
 
 Status: 
-	The index.html page is working currently, we are using python as out backend language to run query scripts on mySQL. The most important aspects include; the database containing a price listing for every service ever and a way to input information. To do's include; finishing the code to add users input to the database, checking user input to assure proper values are entered, searching the database, and displaying results. Order of priotrity:
+	The index.html, and price reporting pages are working. We are using python as the backend language to run query scripts on mySQL. The most important aspects to focus on include; the database architecture of the database containing price listings for every service, (ever) and a method design to input information into the database. To do's include; finishing the code to add users input to the database, checking user input to assure proper values are entered, searching the database, and displaying results. Order of priotrity:
 
 		1. Adding inputs to database (listForm.py)
 		2. Searching Database -Dad
