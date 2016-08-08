@@ -16,7 +16,7 @@ Status:
 		6. Determine name
 		7. Launch
 
-In order to view the code you will need to set up a local web server such as "apache". Apache comes pre set up on Macs for web development(Dad). You will just have to make sure the permissions and config files are properly set up. Additionally, you will need to download, install, properly set-up mySQL database locally (eventually this will be on the web).
+In order to view the site you will need to set up a local web server such as "apache". Apache comes pre set up on Macs for web development(Dad). You will just have to make sure the permissions and config files are properly set up. Additionally, you will need to download, install, properly set-up mySQL database locally (eventually this will be on the web).
 
 Below is a collection of notes from the project 
 
