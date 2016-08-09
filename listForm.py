@@ -54,10 +54,13 @@ if form.getvalue("atb_4"):
 	atb_4 = form.getvalue("atb_4")
 	print '<h1> Attribute 4 is: ' + atb_4 + '!</h1><br />'
 ###############################################
-#        Connect to mySQL database            #
+#        Connect to mySQL database 
+#
+#        Note: This should eventually be in a 
+#        seperate file (for security reasons).
 ###############################################
 try:
- conn = MySQLdb.connect (
+ db = MySQLdb.connect (
   host = "localhost",
   user = "root",
   passwd = "1234chapo",
@@ -68,13 +71,51 @@ except MySQLdb.Error, e:
  sys.exit (1)
 
 print "connected to the database"
-c = conn.cursor()
+cursor = db.cursor()
 
-c.execute("SELECT * FROM houseChores")
+# Drop table if it already exist using execute() method. This
+# is for testing only
+cursor.execute("DROP TABLE IF EXISTS listings")
 
-rows = c.fetchall()
+# Create table as per requirement
+sql = """CREATE TABLE listings (
+         ID INT,
+         CATEGORY VARCHAR(150),
+         SUB_CATEGORY  VARCHAR(150),
+         SERVICE VARCHAR(150),  
+         COMPANY VARCHAR(150),
+         PRICE FLOAT,
+         RATING INT,
+         URL VARCHAR(150),
+         LOCATION VARCHAR(150),
+         ATB_1 VARCHAR(150),
+         ATB_2 VARCHAR(150),
+         ATB_3 VARCHAR(150),
+         ATB_4 VARCHAR(150) )"""
 
-for eachRow in rows:
-	print eachRow
+cursor.execute(sql)
+
+
+#############################################
+# This is where I will add the input data to
+# the listing database.
+#############################################
+sql = """INSERT INTO LISTINGS(ID, CATEGORY, SUB_CATEGORY,
+         SERVICE, COMPANY, PRICE, RATING, URL, LOCATION,
+         ATB_1, ATB_2, ATB_3, ATB_4)
+         VALUES (1, 'ENGINEERING', 'CONSULTING', 'DATABASE ARCHITECTURE',
+         'APPS R US', 150, 5, 'www.appsrus.com', 'SILICON VALLEY',
+         'Data pro', '20 years experience', 'mySQL', 'mongoDB')""" 
+try:
+   # Execute the SQL command
+   cursor.execute(sql)
+   # Commit your changes in the database
+   db.commit()
+except:
+   # Rollback in case there is any error
+   db.rollback()
+
+# disconnect from server
+db.close()
 
 
