@@ -53,8 +53,6 @@ if form.getvalue("atb_3"):
 if form.getvalue("atb_4"):
 	atb_4 = form.getvalue("atb_4")
 	print '<h1> Attribute 4 is: ' + atb_4 + '!</h1><br />'
-
-  
 ###############################################
 #        Connect to mySQL database 
 #
@@ -77,41 +75,37 @@ cursor = db.cursor()
 
 # Drop table if it already exist using execute() method. This
 # is for testing only
-#cursor.execute("DROP TABLE IF EXISTS listings")
+cursor.execute("DROP TABLE IF EXISTS listings")
 
 # Create table as per requirement
-#sql = """CREATE TABLE listings (
-#         ID INT,
-#        CATEGORY VARCHAR(150),
-#         SUB_CATEGORY  VARCHAR(150),
-#         SERVICE VARCHAR(150),  
-#         COMPANY VARCHAR(150),
-#         PRICE FLOAT,
-#         RATING INT,
-#         URL VARCHAR(150),
-#         LOCATION VARCHAR(150),
-#         ATB_1 VARCHAR(150),
-#         ATB_2 VARCHAR(150),
-#         ATB_3 VARCHAR(150),
-#         ATB_4 VARCHAR(150) )"""
+sql = """CREATE TABLE listings (
+         ID INT,
+         CATEGORY VARCHAR(150),
+         SUB_CATEGORY  VARCHAR(150),
+         SERVICE VARCHAR(150),  
+         COMPANY VARCHAR(150),
+         PRICE FLOAT,
+         RATING INT,
+         URL VARCHAR(150),
+         LOCATION VARCHAR(150),
+         ATB_1 VARCHAR(150),
+         ATB_2 VARCHAR(150),
+         ATB_3 VARCHAR(150),
+         ATB_4 VARCHAR(150) )"""
 
-# cursor.execute(sql)
+cursor.execute(sql)
 
 
 #############################################
-# This is where the inputs are added to
+# This is where I will add the input data to
 # the listing database.
 #############################################
-sql = """INSERT INTO LISTINGS(ID, CATEGORY, SUB_CATEGORY, 
-         SERVICE, COMPANY, PRICE, RATING, URL, LOCATION, 
-         ATB_1, ATB_2, ATB_3, ATB_4) 
-         VALUES (1, '%s', '%s', '%s', 
-         '%s', 100, '%d', '%s', '%s', 
-         '%s', '%s', '%s', '%s')""" % \
-         (category, subcategory, service, company, 5, URL,
-         	location, atb_1, atb_2, atb_3, atb_4)
-        
-
+sql = """INSERT INTO LISTINGS(ID, CATEGORY, SUB_CATEGORY,
+         SERVICE, COMPANY, PRICE, RATING, URL, LOCATION,
+         ATB_1, ATB_2, ATB_3, ATB_4)
+         VALUES (1, 'ENGINEERING', 'CONSULTING', 'DATABASE ARCHITECTURE',
+         'APPS R US', 150, 5, 'www.appsrus.com', 'SILICON VALLEY',
+         'Data pro', '20 years experience', 'mySQL', 'mongoDB')""" 
 try:
    # Execute the SQL command
    cursor.execute(sql)
@@ -123,4 +117,5 @@ except:
 
 # disconnect from server
 db.close()
+
 

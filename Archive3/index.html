@@ -19,12 +19,15 @@
 
 
 <!-- ++++++++++++++SEARCH BAR+++++++++++++++++++ -->
-<form method="post" action="/cgi-bin/searchBar.py" class="form-wrapper">
-<input type="text" name="search" id=search />
-<input type="submit" value="GO" id=submit />
-<!-- <button id="submit" onclick="searchListings()">GO</button> -->
+<form class="form-wrapper">
+<input type="text" id="search" placeholder="Find a price..." required>
+<button id="submit" onclick="searchListings()">GO</button>
 </form>
 
+<p>Searching for:</p>
+<p id="searchItem"></p>
 
+   
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
