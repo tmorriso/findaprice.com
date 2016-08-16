@@ -15,7 +15,7 @@ print """
 form = cgi.FieldStorage()
 if form.getvalue("search"):
 	search = form.getvalue("search")
-	print '<h1> Searching For: ' + search + '!</h1><br />'
+	#print '<h1> Searching For: ' + search + '!</h1><br />'
 
 
 ###############################################
@@ -35,7 +35,6 @@ except MySQLdb.Error, e:
  print "Error %d: %s" % (e.args[0], e.args[1])
  sys.exit (1)
 
-print "connected to the database"
 cursor = db.cursor()
 
 #############################################
@@ -72,23 +71,36 @@ cursor = db.cursor()
 #
 #############################################
 
-sql = """ SELECT * FROM listings WHERE 
-			CATEGORY LIKE "%DOGS%" """ 
+sql = """ SELECT * FROM listings WHERE \
+		  CATEGORY = '%s' """ % \
+		  (search)
+			
 
         
 try:
    # Execute the SQL command
    cursor.execute(sql)
-   # Commit your changes in the database
-   # db.commit()
-   for (CATEGORY) in cursor:
-  	print(" The category is: {}".format(
-    	CATEGORY))
+   
+   # Display Results
+   results = cursor.fetchall()
+
+   # Display number of results found	  
+   print '<h1>' + str(cursor.rowcount) + ' Result(s) Found!</h1><br />'
+   
+   # Display values
+   for row in results:
+   	print '<h2> The category is:' + row[1] + '!</h2><br />'
+   	print '<h2> The Subcategory is:' + row[2] + '!</h2><br />'
+   	print '<h2> The service is:' + row[3] + '!</h2><br />'
+   	print '<h2> The company is:' + row[4] + '!</h2><br />'
+	# Link to website 
+   	print '<a href= %s >Go to website</a>' % (row[7])
+
 
 except:
    # Rollback in case there is any error
    db.rollback()
-
+   print ("Error: unable to fetch data")
 # disconnect from server
 db.close()
 
