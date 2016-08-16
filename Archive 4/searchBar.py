@@ -7,9 +7,6 @@ print "Content-type: text/html"
 
 print """
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="/style.css">
-</head>
 <body>
 </body>
 </html>
@@ -77,6 +74,8 @@ cursor = db.cursor()
 sql = """ SELECT * FROM listings WHERE \
 		  CATEGORY = '%s' """ % \
 		  (search)
+			
+
         
 try:
    # Execute the SQL command
@@ -87,19 +86,16 @@ try:
 
    # Display number of results found	  
    print '<h1>' + str(cursor.rowcount) + ' Result(s) Found!</h1><br />'
-   print '<form method="post" class="form-wrapper">'
-   count = 1
+   
    # Display values
    for row in results:
-   	print '<h1> Result: ' + str(count) + '</h1><br />'
-   	print '<h2> Category: ' + row[1] + '!</h2><br />'
-   	print '<h2> Subcategory: ' + row[2] + '!</h2><br />'
-   	print '<h2> Service: ' + row[3] + '!</h2><br />'
-   	print '<h2> Company: ' + row[4] + '!</h2><br />'
+   	print '<h2> The category is:' + row[1] + '!</h2><br />'
+   	print '<h2> The Subcategory is:' + row[2] + '!</h2><br />'
+   	print '<h2> The service is:' + row[3] + '!</h2><br />'
+   	print '<h2> The company is:' + row[4] + '!</h2><br />'
 	# Link to website 
    	print '<a href= %s >Go to website</a>' % (row[7])
-   	count = count + 1
-   print '</form>' 
+
 
 except:
    # Rollback in case there is any error
@@ -108,4 +104,9 @@ except:
 # disconnect from server
 db.close()
 
-
+############################################
+# Display the Results (this could be a new
+# page)
+#
+#
+############################################

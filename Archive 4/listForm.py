@@ -7,13 +7,8 @@ print "Content-type: text/html"
 
 print """
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="/style.css">
-</head>
 <body>
-<form method="post" class="form-wrapper">
 <h1> Results!</h1>
-</form>
 </body>
 </html>
 """	
