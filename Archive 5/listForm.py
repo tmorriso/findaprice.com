@@ -11,7 +11,9 @@ print """
 <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
+<form method="post" class="form-wrapper">
 <h1> Results!</h1>
+</form>
 </body>
 </html>
 """	
@@ -83,36 +85,35 @@ cursor = db.cursor()
 #cursor.execute("DROP TABLE IF EXISTS listings")
 
 # Create table as per requirement
-# sql = """CREATE TABLE listings (
-#          ID INT AUTO_INCREMENT,
-#          CATEGORY VARCHAR(150),
-#          SUB_CATEGORY  VARCHAR(150),
-#          SERVICE VARCHAR(150),  
-#          COMPANY VARCHAR(150),
-#          PRICE FLOAT,
-#          RATING INT,
-#          URL VARCHAR(150),
-#          LOCATION VARCHAR(150),
-#          ATB_1 VARCHAR(150),
-#          ATB_2 VARCHAR(150),
-#          ATB_3 VARCHAR(150),
-#          ATB_4 VARCHAR(150),
-#          PRIMARY KEY (ID) )"""
+#sql = """CREATE TABLE listings (
+#         ID INT,
+#        CATEGORY VARCHAR(150),
+#         SUB_CATEGORY  VARCHAR(150),
+#         SERVICE VARCHAR(150),  
+#         COMPANY VARCHAR(150),
+#         PRICE FLOAT,
+#         RATING INT,
+#         URL VARCHAR(150),
+#         LOCATION VARCHAR(150),
+#         ATB_1 VARCHAR(150),
+#         ATB_2 VARCHAR(150),
+#         ATB_3 VARCHAR(150),
+#         ATB_4 VARCHAR(150) )"""
 
-#cursor.execute(sql)
+# cursor.execute(sql)
 
 
 #############################################
 # This is where the inputs are added to
 # the listing database.
 #############################################
-sql = """INSERT INTO LISTINGS(CATEGORY, SUB_CATEGORY, 
+sql = """INSERT INTO LISTINGS(ID, CATEGORY, SUB_CATEGORY, 
          SERVICE, COMPANY, PRICE, RATING, URL, LOCATION, 
          ATB_1, ATB_2, ATB_3, ATB_4) 
-         VALUES ('%s', '%s', '%s', 
-         '%s', '%s', '%s', '%s', '%s', 
+         VALUES (1, '%s', '%s', '%s', 
+         '%s', 100, '%d', '%s', '%s', 
          '%s', '%s', '%s', '%s')""" % \
-         (category, subcategory, service, company, price, rating, URL,
+         (category, subcategory, service, company, 5, URL,
          	location, atb_1, atb_2, atb_3, atb_4)
         
 

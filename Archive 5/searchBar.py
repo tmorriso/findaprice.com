@@ -11,10 +11,6 @@ print """
 <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
-<form method="post" action="/cgi-bin/searchBar.py" class="form-wrapper">
-<input type="text" name="search" id=search />
-<input type="submit" value="GO" id=submit />
-</form>
 </body>
 </html>
 """	
@@ -78,8 +74,9 @@ cursor = db.cursor()
 #
 #############################################
 
-sql = """ SELECT * FROM listings WHERE 
-		  CATEGORY = '%s' """ % (search)
+sql = """ SELECT * FROM listings WHERE \
+		  CATEGORY = '%s' """ % \
+		  (search)
         
 try:
    # Execute the SQL command
@@ -88,27 +85,21 @@ try:
    # Display Results
    results = cursor.fetchall()
 
-   # Display number of results found
-   print '<form method="post" class="form-wrapper">'	  
+   # Display number of results found	  
    print '<h1>' + str(cursor.rowcount) + ' Result(s) Found!</h1><br />'
-   print '</form>' 
-
+   print '<form method="post" class="form-wrapper">'
    count = 1
    # Display values
    for row in results:
-   	print '<form method="post" class="form-wrapper">'
    	print '<h1> Result: ' + str(count) + '</h1><br />'
-   	print '<h2> Price: ' + str(row[5]) + '!</h2><br />'
-   	print '<h2> Rating: ' + str(row[6]) + '!</h2><br />'
    	print '<h2> Category: ' + row[1] + '!</h2><br />'
    	print '<h2> Subcategory: ' + row[2] + '!</h2><br />'
    	print '<h2> Service: ' + row[3] + '!</h2><br />'
    	print '<h2> Company: ' + row[4] + '!</h2><br />'
 	# Link to website 
    	print '<a href= %s >Go to website</a>' % (row[7])
-   	print '</form>' 
    	count = count + 1
-   
+   print '</form>' 
 
 except:
    # Rollback in case there is any error
