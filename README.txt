@@ -8,8 +8,8 @@ Tester: Ann Morrison
 Status: 
 	The index.html, and price reporting pages are working. We are using python as the backend language to run query scripts on mySQL. The most important aspects to focus on include; the database architecture of the database containing price listings for every service, (ever) and a method design to input information into the database. To do's include; finishing the code to add users input to the database, checking user input to assure proper values are entered, searching the database, and displaying results. Order of priotrity:
 
-		1. Adding inputs to database (listForm.py)
-		2. Searching Database -Dad (Look into using external plugins google)
+		1. Adding inputs to database (listForm.py) -Done
+		2. Searching Database -Dad (Look into using external plugins google) 
 		3. Displaying search results
 		4. Securities (making sure inputs are allowed(No mySQL query hacks), python db config file?)
 		5. Front End Assembly -Hillary
@@ -17,6 +17,15 @@ Status:
 		7. Launch
 
 In order to view the site you will need to set up a local web server such as "apache". Apache comes pre set up on Macs for web development(Dad). You will just have to make sure the permissions and config files are properly set up. Additionally, you will need to download, install, properly set-up mySQL database locally (eventually this will be on the web).
+
+Top categories selected in company board meeting.
+	1. Car Services
+	2. Health Services
+	3. Around the House
+	4. Tourism Activities
+
+
+
 
 Below is a collection of notes from the project 
 
@@ -47,7 +56,11 @@ var main = function() {
 
 // gitHub repository for craigslist open source code.
 https://github.com/craigslist/python-clblob
-
+*****************************************************
+*
+*          mySQL Database Notes
+*
+*****************************************************
 // Local mySQL notes
 mysql -u root -p
 1234chapo
@@ -56,3 +69,12 @@ mysql -u root -p
 > SHOW TABLES;
 > DESCRIBE houseChores;
 > SELECT * FROM houseChores;
+
+// To import the entire directory (using workbench)
+get "DUMP.sql" file to import
+Select database
+CLick "Data/ Import/Restore"
+Click Radio Box "Import from Dump Project Folder"
+Select .sql file
+Select the schema to update
+Click "Start Import"
